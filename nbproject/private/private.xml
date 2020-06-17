@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/zS18019639/Documents/NetBeansProjects/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLindexNew.fxml</file>
-            <file>file:/C:/Users/zS18019639/Documents/NetBeansProjects/appGestorPracticasProfecionales/src/datos/StudentConnection.java</file>
-            <file>file:/C:/Users/zS18019639/Documents/NetBeansProjects/appGestorPracticasProfecionales/src/datos/StudentDao.java</file>
-            <file>file:/C:/Users/zS18019639/Documents/NetBeansProjects/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/AppGestorPracticasProfecionales.java</file>
-            <file>file:/C:/Users/zS18019639/Documents/NetBeansProjects/appGestorPracticasProfecionales/src/domain/StudentDTO.java</file>
-            <file>file:/C:/Users/zS18019639/Documents/NetBeansProjects/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLindexNewController.java</file>
+            <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLExpediente.fxml</file>
+            <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLprincipalEstudiante.fxml</file>
+            <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLExpedienteController.java</file>
+            <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLprincipalEstudianteController.java</file>
+            <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLindexNewController.java</file>
         </group>
     </open-files>
 </project-private>

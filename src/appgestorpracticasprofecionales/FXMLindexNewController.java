@@ -74,7 +74,7 @@ public class FXMLindexNewController implements Initializable {
                 if(rs.next()){
                     String nomUser = rs.getString("nombre");
                     String apellidoPaternoUser = rs.getString("apellidoPaterno");
-                    
+        
                     Alert alertExitoso = new Alert(Alert.AlertType.INFORMATION);
                     alertExitoso.setTitle("Acceso correcto");
                     alertExitoso.setHeaderText(null);
@@ -96,7 +96,7 @@ public class FXMLindexNewController implements Initializable {
         }
     }
     
-    public void consultarProfresor(String nombre, String password){
+    private void consultarProfresor(String nombre, String password){
         Connection connect = Conexion.getConexion();
         PreparedStatement stmt = null;
         if(connect != null){
@@ -131,7 +131,6 @@ public class FXMLindexNewController implements Initializable {
     
     
     private void irprincipalEstudiante(){
-        
         try {
             Stage stage = (Stage) textNameUser.getScene().getWindow();
             
@@ -141,13 +140,11 @@ public class FXMLindexNewController implements Initializable {
                     
         } catch (IOException ex) {
             Logger.getLogger(FXMLindexNewController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        } 
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }  
-    
 }

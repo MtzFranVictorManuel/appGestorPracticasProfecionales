@@ -17,7 +17,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
+import javafx.scene.control.*;
+import domain.StudentDTO;
 /**
  * FXML Controller class
  *
@@ -29,6 +30,9 @@ public class FXMLprincipalEstudianteController implements Initializable {
     private Button btnExpediente;
     
     @FXML
+    private Label txtProcentaje;
+    
+    @FXML
     private void iniciarExpediente(ActionEvent event){
         irExpediente();
     }
@@ -37,7 +41,7 @@ public class FXMLprincipalEstudianteController implements Initializable {
         try {
             Stage stage = (Stage) btnExpediente.getScene().getWindow();
             
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("FXMLexpediente.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("FXMLExpediente.fxml")));
             stage.setScene(scene);
             stage.show();
                     

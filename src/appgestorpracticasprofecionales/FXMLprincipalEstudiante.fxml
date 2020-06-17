@@ -9,8 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="542.0" prefWidth="912.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="appgestorpracticasprofecionales.FXMLprincipalEstudianteController">
+<AnchorPane id="AnchorPane" prefHeight="542.0" prefWidth="912.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appgestorpracticasprofecionales.FXMLprincipalEstudianteController">
    <children>
       <Label layoutX="244.0" layoutY="73.0" text="Datos:" />
       <Button fx:id="btnCerrarSesion" layoutX="777.0" layoutY="22.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="105.0" text="Cerrar sesión" />
@@ -23,7 +22,7 @@
       </Label>
       <DatePicker layoutX="623.0" layoutY="167.0" />
       <ProgressBar layoutX="500.0" layoutY="105.0" prefHeight="25.0" prefWidth="364.0" progress="0.0" />
-      <Label layoutX="660.0" layoutY="62.0">
+      <Label fx:id="txtProcentaje" layoutX="660.0" layoutY="62.0">
          <font>
             <Font size="27.0" />
          </font>

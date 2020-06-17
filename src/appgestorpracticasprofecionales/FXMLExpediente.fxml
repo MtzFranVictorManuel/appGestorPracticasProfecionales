@@ -1,61 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="691.0" prefWidth="932.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="appgestorpracticasprofecionales.FXMLexpedienteController">
-   <children>
+<AnchorPane id="AnchorPane" prefHeight="660.0" prefWidth="883.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appgestorpracticasprofecionales.FXMLExpedienteController">
+       <children>
       <Label layoutX="31.0" layoutY="29.0" text="Expediente de estudiante">
-         <font>
-            <Font size="23.0" />
-         </font>
       </Label>
-      <ImageView fitHeight="131.0" fitWidth="123.0" layoutX="31.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="197.0" layoutY="76.0" text="Nombre:">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label layoutX="197.0" layoutY="115.0" text="Matricula:">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label layoutX="31.0" layoutY="205.0" text="Fecha inicio:">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label layoutX="31.0" layoutY="243.0" text="Fecha de finalización:">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label layoutX="31.0" layoutY="278.0" text="Horas:">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label layoutX="31.0" layoutY="313.0" text="Proyecto:">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label layoutX="31.0" layoutY="350.0" text="Porcentaje actual:">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label layoutX="31.0" layoutY="387.0" text="Profesor:">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <TableView layoutX="28.0" layoutY="440.0" prefHeight="200.0" prefWidth="797.0">
         <columns>
@@ -66,44 +36,22 @@
       <Button layoutX="773.0" layoutY="91.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Regresar" />
       <Button layoutX="773.0" layoutY="142.0" mnemonicParsing="false" text="Info. proyecto" />
       <Label fx:id="txtNombre" layoutX="283.0" layoutY="76.0">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label fx:id="txtMatricula" layoutX="288.0" layoutY="115.0">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label fx:id="txtFechaInicio" layoutX="232.0" layoutY="205.0">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label fx:id="txtFechaFinal" layoutX="232.0" layoutY="243.0">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label fx:id="txtTotalHoras" layoutX="232.0" layoutY="278.0">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label fx:id="txtNombreProyecto" layoutX="232.0" layoutY="313.0">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label fx:id="txtPorcentaje" layoutX="232.0" layoutY="350.0">
-         <font>
-            <Font size="18.0" />
-         </font>
       </Label>
       <Label fx:id="txtnombreProfesor" layoutX="232.0" layoutY="387.0">
-         <font>
-            <Font size="18.0" />
-         </font>
+
       </Label>
+      <ImageView fitHeight="135.0" fitWidth="126.0" layoutX="35.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
