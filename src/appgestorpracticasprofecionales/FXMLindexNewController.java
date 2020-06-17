@@ -13,10 +13,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import datos.Conexion;
 import datos.StudentConnection;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  *
@@ -74,6 +80,7 @@ public class FXMLindexNewController implements Initializable {
                     alertExitoso.setHeaderText(null);
                     alertExitoso.setContentText("Bienvenido " + nomUser + " " + apellidoPaternoUser + " al sistema");
                     alertExitoso.showAndWait();
+                    irprincipalEstudiante();
                 }
                 else{
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -120,6 +127,22 @@ public class FXMLindexNewController implements Initializable {
                 e.printStackTrace();
             }
         }
+    }
+    
+    
+    private void irprincipalEstudiante(){
+        
+        try {
+            Stage stage = (Stage) textNameUser.getScene().getWindow();
+            
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("FXMLprincipalEstudiante.fxml")));
+            stage.setScene(scene);
+            stage.show();
+                    
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLindexNewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
     @Override
