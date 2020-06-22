@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import datos.Conexion;
 import datos.StudentConnection;
+import domain.StudentDTO;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -40,9 +41,10 @@ public class FXMLindexNewController implements Initializable {
     private PasswordField textPassword;
     
     @FXML
-    private void initializeLogin(ActionEvent event){
+    private void initializeLogin(ActionEvent event){  
         String userName = textNameUser.getText();
         String password = textPassword.getText();
+        
 
         if(!userName.isEmpty() && !password.isEmpty()){
             if(userName.startsWith("xd"))
@@ -131,7 +133,7 @@ public class FXMLindexNewController implements Initializable {
     
     
     private void irprincipalEstudiante(){
-        try {
+       /* try {
             Stage stage = (Stage) textNameUser.getScene().getWindow();
             
             Scene scene = new Scene(FXMLLoader.load(getClass().getResource("FXMLprincipalEstudiante.fxml")));
@@ -140,7 +142,7 @@ public class FXMLindexNewController implements Initializable {
                     
         } catch (IOException ex) {
             Logger.getLogger(FXMLindexNewController.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        } */
     }
     
     @Override

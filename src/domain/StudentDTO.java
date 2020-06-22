@@ -15,12 +15,26 @@ public class StudentDTO {
     private String apellidoPaterno;
     private String apellidoMaterno;
     private String correo;
-    private String matricula;
+    public static String matricula;
     private String semestre;
     private String telefono;
     private String password;
 
-    
+    public StudentDTO(int id_estudiante, String nombre, String apellidoPaterno, String apellidoMaterno, String correo, String matricula, String semestre, String telefono, String password) {
+        this.id_estudiante = id_estudiante;
+        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.correo = correo;
+        this.matricula = matricula;
+        this.semestre = semestre;
+        this.telefono = telefono;
+        this.password = password;
+    }
+
+    public StudentDTO(){
+        
+    }
     
     //gets
     public int getId_estudiante() {
