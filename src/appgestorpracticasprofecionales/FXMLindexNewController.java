@@ -50,6 +50,7 @@ public class FXMLindexNewController implements Initializable {
             if(userName.startsWith("xd"))
             {
                 consultarEstudiante(userName, password);
+                
             }else{
                 consultarProfresor(userName, password);
             }
@@ -75,6 +76,7 @@ public class FXMLindexNewController implements Initializable {
                 ResultSet rs = stmt.executeQuery();
                 if(rs.next()){
                     String nomUser = rs.getString("nombre");
+                    StudentDTO.matricula = matricula;
                     String apellidoPaternoUser = rs.getString("apellidoPaterno");
         
                     Alert alertExitoso = new Alert(Alert.AlertType.INFORMATION);
@@ -133,16 +135,16 @@ public class FXMLindexNewController implements Initializable {
     
     
     private void irprincipalEstudiante(){
-       /* try {
+         try {
             Stage stage = (Stage) textNameUser.getScene().getWindow();
             
-            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("FXMLprincipalEstudiante.fxml")));
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("FXMLindesEstudiante.fxml")));
             stage.setScene(scene);
             stage.show();
                     
         } catch (IOException ex) {
             Logger.getLogger(FXMLindexNewController.class.getName()).log(Level.SEVERE, null, ex);
-        } */
+        }
     }
     
     @Override

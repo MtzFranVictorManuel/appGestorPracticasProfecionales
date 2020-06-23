@@ -22,7 +22,7 @@ public class StudentConnection implements StudentDao{
     private static final String SQL_INSERT = "INSERT INTO tbl_estudiante(nombre, apellidoPaterno, apellidoMaterno, correo, matricula, semestre, telefono, password) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE tbl_estudiante SET nombre=?, apellidoPaterno=?, apellidoMaterno=?, correo=?, matricula=?, semestre=?, telefono=?, password=? WHERE id_estudiante = ?";
     private static final String SQL_DELETE = "DELETE FROM tbl_estudiante WHERE id_estudiante=?";
-    
+    private static final String SQL_ObtenerCarrera = "SELECT carreraUniversitaria FROM tbl_carrera, tbl_estudiante WHERE tbl_estudiante.matricula= ?";
     public StudentConnection(){
         
     }
@@ -152,4 +152,6 @@ public class StudentConnection implements StudentDao{
 
         return rows;
     }
+    
+    
 }

@@ -11,7 +11,7 @@ package domain;
  */
 public class StudentDTO {
     private int id_estudiante;
-    private String nombre;
+    public static String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
     private String correo;
@@ -19,8 +19,9 @@ public class StudentDTO {
     private String semestre;
     private String telefono;
     private String password;
+    public static String carrera;
 
-    public StudentDTO(int id_estudiante, String nombre, String apellidoPaterno, String apellidoMaterno, String correo, String matricula, String semestre, String telefono, String password) {
+    public StudentDTO(int id_estudiante, String nombre, String apellidoPaterno, String apellidoMaterno, String correo, String matricula, String semestre, String telefono, String password, String carrera) {
         this.id_estudiante = id_estudiante;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
@@ -30,6 +31,7 @@ public class StudentDTO {
         this.semestre = semestre;
         this.telefono = telefono;
         this.password = password;
+        this.carrera = carrera;
     }
 
     public StudentDTO(){
@@ -73,6 +75,10 @@ public class StudentDTO {
         return password;
     }
     
+    public String getCarrera(){
+        return carrera;
+    }
+    
     
     //sets
     public void setId_estudiante(int id_estudiante) {
@@ -109,6 +115,10 @@ public class StudentDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+    
+    public void setCarrera(String carrea){
+        this.carrera = carrea;
     }
     
 }
