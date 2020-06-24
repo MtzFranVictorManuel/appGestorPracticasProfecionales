@@ -45,7 +45,10 @@
             <Font name="System Bold" size="14.0" />
          </font></Label>
       <Label fx:id="txtCarrera" layoutX="392.0" layoutY="387.0" textAlignment="CENTER" />
-      <Label layoutX="630.0" layoutY="126.0" text="Profesor" />
+      <Label layoutX="630.0" layoutY="126.0" text="Profesor:">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
       <Label fx:id="txtNombreProfesor" layoutX="630.0" layoutY="160.0" textAlignment="CENTER" />
       <Button fx:id="btnRegresar" layoutX="630.0" layoutY="29.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="181.0" text="Regresar" />
       <Button fx:id="btnExportar" layoutX="643.0" layoutY="396.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="181.0" text="Exportar" />

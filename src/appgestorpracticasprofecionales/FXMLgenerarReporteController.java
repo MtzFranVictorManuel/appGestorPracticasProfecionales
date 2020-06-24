@@ -36,25 +36,6 @@ public class FXMLgenerarReporteController implements Initializable {
     private Label txtNombreCompleto;
     
     
-    public void consultarEmpresa(String matricula){
-    Connection connect = Conexion.getConexion();
-    PreparedStatement stmt = null;
-    if(connect != null){
-        try{
-            stmt = connect.prepareStatement(SQL_CONSULTAEmpresa);
-            stmt.setString(1, matricula);
-            ResultSet rs = stmt.executeQuery();
-                if(rs.next()){
-                    String nombreEmpresa = rs.getString("nombre");
-                    String periodo = rs.getString("periodo");
-                    
-                }
-            }
-            catch(Exception e){
-                e.printStackTrace();
-            }
-        }
-    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -64,7 +45,7 @@ public class FXMLgenerarReporteController implements Initializable {
         txtNombreCompleto.setText(estudiante.getNombre() + " " + estudiante.getApellidoPaterno() + " " + estudiante.getApellidoMaterno());
         txtCarrera.setText(estudiante.getCarrera());
        // txtNombreProyecto.setText(estudiante.ge);
-                   // txtPeriodoEscolar.setText(periodo);
+       // txtPeriodoEscolar.setText(periodo);
     }    
     
 }

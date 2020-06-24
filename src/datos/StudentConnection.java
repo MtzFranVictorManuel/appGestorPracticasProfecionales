@@ -22,6 +22,8 @@ public class StudentConnection implements StudentDao{
     private static final String SQL_UPDATE = "UPDATE tbl_estudiante SET nombre=?, apellidoPaterno=?, apellidoMaterno=?, correo=?, matricula=?, semestre=?, telefono=?, password=? WHERE id_estudiante = ?";
     private static final String SQL_DELETE = "DELETE FROM tbl_estudiante WHERE id_estudiante=?";
     private static final String SQL_OPTENERINFOESTUDIANTE = "SELECT TBL_estudiante.nombre, TBL_estudiante.apellidoPaterno, TBL_estudiante.apellidoMaterno, TBL_estudiante.correo, TBL_estudiante.matricula, TBL_estudiante.semestre, TBL_estudiante.telefono, TBL_Carrera.carreraUniversitaria FROM TBL_estudiante, TBL_Carrera WHERE tbl_carrera.idtbl_carrera = (SELECT fk_id_carrera FROM tbl_estudiante WHERE matricula = ?) AND tbl_estudiante.matricula = ?";
+    private static final String SQL_EMPRESAINFO = "SELECT *  FROM tbl_proyecto WHERE tbl_proyecto.id_proyecto = (SELECT FK_id_proyecto FROM STBL_FK_ProfesAlumnProyect WHERE FK_id_estudiante = (SELECT id_estudiante FROM TBL_Estudiante Where matricula = ?))";
+
     public StudentConnection(){
         
     }
@@ -124,12 +126,18 @@ public class StudentConnection implements StudentDao{
                     String nombre = rs.getString("nombre");
                     String apellidoPatreno = rs.getString("apellidoPaterno");
                     String apellidoMaterno = rs.getString("apellidoMaterno");
+                    String correo = rs.getString("correo");
+                    String semestre = rs.getString("semestre");
+                    String telefono = rs.getString("telefono");
                     String carrera = rs.getString("carreraUniversitaria");
                     
                    StudentDTO estudianteInfo = new StudentDTO();
                    estudianteInfo.setNombre(nombre);
                    estudianteInfo.setApellidoPaterno(apellidoPatreno);
                    estudianteInfo.setApellidoMaterno(apellidoMaterno);
+                   estudianteInfo.setCorreo(correo);
+                   estudianteInfo.setSemestre(semestre);
+                   estudianteInfo.setTelefono(telefono);
                    estudianteInfo.setCarrera(carrera);
                 }
             }
@@ -139,6 +147,26 @@ public class StudentConnection implements StudentDao{
         }
     }
     
+   
+    public void consultarEmpresa(String matricula){
+    Connection connect = Conexion.getConexion();
+    PreparedStatement stmt = null;
+    if(connect != null){
+        try{
+            stmt = connect.prepareStatement(SQL_EMPRESAINFO);
+            stmt.setString(1, matricula);
+            ResultSet rs = stmt.executeQuery();
+                if(rs.next()){
+                    String nombreEmpresa = rs.getString("nombre");
+                    String periodo = rs.getString("periodo");
+                    
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
     
     
 }
