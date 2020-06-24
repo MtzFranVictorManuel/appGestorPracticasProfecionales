@@ -11,15 +11,15 @@ package domain;
  */
 public class StudentDTO {
     private int id_estudiante;
-    public static String nombre;
-    private String apellidoPaterno;
-    private String apellidoMaterno;
-    private String correo;
+    private static String nombre;
+    private static String apellidoPaterno;
+    private static String apellidoMaterno;
+    private static String correo;
     public static String matricula;
-    private String semestre;
-    private String telefono;
-    private String password;
-    public static String carrera;
+    private static String semestre;
+    private static String telefono;
+    private static String password;
+    private static String carrera;
 
     public StudentDTO(int id_estudiante, String nombre, String apellidoPaterno, String apellidoMaterno, String correo, String matricula, String semestre, String telefono, String password, String carrera) {
         this.id_estudiante = id_estudiante;

@@ -19,6 +19,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
@@ -30,45 +31,38 @@ import javafx.stage.Stage;
  * @author zS18019639
  */
 public class FXMLindesEstudianteController implements Initializable {
-    private static final String SQL_ObtenerCarrera = "SELECT * FROM tbl_carrera, tbl_estudiante WHERE tbl_estudiante.matricula= ?";
-
+ 
     @FXML
     private Label txtMatricula;
     @FXML
     private Label txtNombre;
     
-    
-    
-    
-    
-   public void consultarInfomacion(String matricula){
-        Connection connect = Conexion.getConexion();
-        PreparedStatement stmt = null;
-        if(connect != null){
-            try{
-                stmt = connect.prepareStatement(SQL_ObtenerCarrera);
-                stmt.setString(1, matricula);
-                ResultSet rs = stmt.executeQuery();
-                if(rs.next()){
-                    String nombre = rs.getString("nombre");
-                    String apellidoPatreno = rs.getString("apellidoPaterno");
-                    String apellidoMaterno = rs.getString("apellidoMaterno");
-                    String nombrecompleto = nombre + " " +apellidoPatreno + " " +apellidoMaterno;
-                    txtNombre.setText(nombrecompleto);
-                    txtMatricula.setText(StudentDTO.matricula);
-                }
-            }
-            catch(Exception e){
-                e.printStackTrace();
-            }
-        }
+    @FXML
+    private void irGenerarReporte(ActionEvent event){
+        irReporteIndex();
     }
-    
-    
+
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        consultarInfomacion(StudentDTO.matricula);
-    }    
+            StudentConnection infoEstudiante = new StudentConnection();
+            infoEstudiante.consultarInfomacion(StudentDTO.matricula);
+            StudentDTO estudiante = new StudentDTO();
+            txtNombre.setText(estudiante.getNombre() + " " + estudiante.getApellidoPaterno() + " " + estudiante.getApellidoMaterno());
+            txtMatricula.setText(StudentDTO.matricula);
+    }
+
+   private void irReporteIndex(){
+    try {
+        Stage stage = (Stage) txtNombre.getScene().getWindow();
+
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("FXMLgenerarReporte.fxml")));
+        stage.setScene(scene);
+        stage.show();
+
+    }   catch (IOException ex) {
+            Logger.getLogger(FXMLindexNewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }

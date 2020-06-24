@@ -7,13 +7,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="448.0" prefWidth="845.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="appgestorpracticasprofecionales.FXMLindesEstudianteController">
+<AnchorPane id="AnchorPane" prefHeight="448.0" prefWidth="845.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appgestorpracticasprofecionales.FXMLindesEstudianteController">
    <children>
       <Label layoutX="180.0" layoutY="31.0" text="Nombre:" />
       <ImageView fitHeight="138.0" fitWidth="147.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="180.0" layoutY="59.0" text="Matricula:" />
-      <Button layoutX="36.0" layoutY="191.0" mnemonicParsing="false" text="Subir reporte" />
+      <Button fx:id="btnSubirReporte" layoutX="36.0" layoutY="191.0" mnemonicParsing="false" onAction="#irGenerarReporte" text="Subir reporte" />
       <Button layoutX="673.0" layoutY="55.0" mnemonicParsing="false" text="Mi expediente" />
       <Button layoutX="673.0" layoutY="112.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Proyectos" />
       <Button layoutX="673.0" layoutY="362.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Cerrar sesion" />

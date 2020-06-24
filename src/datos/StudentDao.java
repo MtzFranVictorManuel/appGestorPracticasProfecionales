@@ -13,7 +13,6 @@ import java.util.List;
  * @author zS18019639
  */
 public interface StudentDao {
-    public List<StudentDTO> select() throws SQLException;
     
     public int insert(StudentDTO student) throws SQLException;
     

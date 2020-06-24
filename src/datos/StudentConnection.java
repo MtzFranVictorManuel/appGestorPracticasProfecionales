@@ -18,11 +18,10 @@ import java.util.List;
 public class StudentConnection implements StudentDao{
     private Connection conexionTransaccional;
     
-    private static final String SQL_SELECT = "SELECT id_estudiante, nombre, apellidoPaterno, apellidoMaterno, correo, matricula, semestre, telefono, password FROM tbl_estudiante";
     private static final String SQL_INSERT = "INSERT INTO tbl_estudiante(nombre, apellidoPaterno, apellidoMaterno, correo, matricula, semestre, telefono, password) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE tbl_estudiante SET nombre=?, apellidoPaterno=?, apellidoMaterno=?, correo=?, matricula=?, semestre=?, telefono=?, password=? WHERE id_estudiante = ?";
     private static final String SQL_DELETE = "DELETE FROM tbl_estudiante WHERE id_estudiante=?";
-    private static final String SQL_ObtenerCarrera = "SELECT carreraUniversitaria FROM tbl_carrera, tbl_estudiante WHERE tbl_estudiante.matricula= ?";
+    private static final String SQL_OPTENERINFOESTUDIANTE = "SELECT TBL_estudiante.nombre, TBL_estudiante.apellidoPaterno, TBL_estudiante.apellidoMaterno, TBL_estudiante.correo, TBL_estudiante.matricula, TBL_estudiante.semestre, TBL_estudiante.telefono, TBL_Carrera.carreraUniversitaria FROM TBL_estudiante, TBL_Carrera WHERE tbl_carrera.idtbl_carrera = (SELECT fk_id_carrera FROM tbl_estudiante WHERE matricula = ?) AND tbl_estudiante.matricula = ?";
     public StudentConnection(){
         
     }
@@ -31,49 +30,6 @@ public class StudentConnection implements StudentDao{
         this.conexionTransaccional = conexionTransaccional;
     }
     
-    public List<StudentDTO> select() throws SQLException{
-        Connection connect = null;
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        StudentDTO estudiante = null;
-        List<StudentDTO> estudiantes = new ArrayList<StudentDTO>();
-        
-        try{
-            connect = this.conexionTransaccional != null ? this.conexionTransaccional : Conexion.getConexion();
-            stmt = connect.prepareStatement(SQL_SELECT);
-            rs = stmt.executeQuery();
-            while (rs.next()) {
-                int id_estudiante = rs.getInt("id_estudiante");
-                String nombre = rs.getString("nombre");
-                String apellidoPaterno = rs.getString("apellidoPaterno");
-                String apellidoMaterno = rs.getString("apellidoMaterno");
-                String correo = rs.getString("correo");
-                String matricula = rs.getString("matricula");
-                String semestre = rs.getString("semestre");
-                String telefono = rs.getString("telefono");
-                String password = rs.getString("password");
-                
-                estudiante = new StudentDTO();
-                estudiante.setId_estudiante(id_estudiante);
-                estudiante.setNombre(nombre);
-                estudiante.setApellidoPaterno(apellidoPaterno);
-                estudiante.setApellidoMaterno(apellidoMaterno);
-                estudiante.setCorreo(correo);
-                estudiante.setMatricula(matricula);
-                estudiante.setSemestre(semestre);
-                estudiante.setTelefono(telefono);
-                estudiante.setPassword(password);
-                
-                estudiantes.add(estudiante);
-            }
-        } finally {
-            Conexion.close(rs);
-            Conexion.close(stmt);
-            if(this.conexionTransaccional == null)
-                Conexion.close(connect);
-        }
-        return estudiantes;
-    }
     
     public int insert(StudentDTO student) throws SQLException{
         Connection connect = null;
@@ -152,6 +108,37 @@ public class StudentConnection implements StudentDao{
 
         return rows;
     }
+    
+    
+        
+   public void consultarInfomacion(String matricula){
+    Connection connect = Conexion.getConexion();
+    PreparedStatement stmt = null;
+    if(connect != null){
+        try{
+            stmt = connect.prepareStatement(SQL_OPTENERINFOESTUDIANTE);
+            stmt.setString(1, matricula);
+            stmt.setString(2, matricula);
+            ResultSet rs = stmt.executeQuery();
+                if(rs.next()){
+                    String nombre = rs.getString("nombre");
+                    String apellidoPatreno = rs.getString("apellidoPaterno");
+                    String apellidoMaterno = rs.getString("apellidoMaterno");
+                    String carrera = rs.getString("carreraUniversitaria");
+                    
+                   StudentDTO estudianteInfo = new StudentDTO();
+                   estudianteInfo.setNombre(nombre);
+                   estudianteInfo.setApellidoPaterno(apellidoPatreno);
+                   estudianteInfo.setApellidoMaterno(apellidoMaterno);
+                   estudianteInfo.setCarrera(carrera);
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
+    
     
     
 }
