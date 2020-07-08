@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package datos;
 
 /**
  *
  * @author zS18019639
  */
-public class BusinessDTO {
+public class ProfesorConector {
     
 }

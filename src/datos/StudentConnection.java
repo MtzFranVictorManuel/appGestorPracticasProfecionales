@@ -5,7 +5,7 @@
  */
 package datos;
 
-import domain.StudentDTO;
+import domain.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +23,7 @@ public class StudentConnection implements StudentDao{
     private static final String SQL_DELETE = "DELETE FROM tbl_estudiante WHERE id_estudiante=?";
     private static final String SQL_OPTENERINFOESTUDIANTE = "SELECT TBL_estudiante.nombre, TBL_estudiante.apellidoPaterno, TBL_estudiante.apellidoMaterno, TBL_estudiante.correo, TBL_estudiante.matricula, TBL_estudiante.semestre, TBL_estudiante.telefono, TBL_Carrera.carreraUniversitaria FROM TBL_estudiante, TBL_Carrera WHERE tbl_carrera.idtbl_carrera = (SELECT fk_id_carrera FROM tbl_estudiante WHERE matricula = ?) AND tbl_estudiante.matricula = ?";
     private static final String SQL_EMPRESAINFO = "SELECT *  FROM tbl_proyecto WHERE tbl_proyecto.id_proyecto = (SELECT FK_id_proyecto FROM STBL_FK_ProfesAlumnProyect WHERE FK_id_estudiante = (SELECT id_estudiante FROM TBL_Estudiante Where matricula = ?))";
+    private static final String SQL_PROFESOR = "Select nombre, apellidoPaterno, apellidoMaterno from tbl_profesor where tbl_profesor.id_profesor = (select fk_id_profesor from stbl_fk_profesalumnproyect where fk_id_estudiante = (select id_estudiante from tbl_estudiante where matricula = ?))";
 
     public StudentConnection(){
         
@@ -158,7 +159,26 @@ public class StudentConnection implements StudentDao{
             ResultSet rs = stmt.executeQuery();
                 if(rs.next()){
                     String nombreEmpresa = rs.getString("nombre");
+                    String compania = rs.getString("company");
+                    String direccion = rs.getString("direccion");
+                    String jefeProyecto = rs.getString("jefeProyecto");
+                    String descripcion = rs.getString("descripcion");
+                    String fechaInicio = rs.getString("fechaInicio");
+                    String fechaFin = rs.getString("fechaFin");
                     String periodo = rs.getString("periodo");
+                    String horasTotales = rs.getString("horasTotales");
+                    
+                    
+                    ProyectoDTO proyectoInfo = new ProyectoDTO();
+                    proyectoInfo.setNombreProyecto(nombreEmpresa);
+                    proyectoInfo.setCompania(compania);
+                    proyectoInfo.setDireccion(direccion);
+                    proyectoInfo.setJefeProyecto(jefeProyecto);
+                    proyectoInfo.setDescripcion(descripcion);
+                    proyectoInfo.setFechaInicio(fechaInicio);
+                    proyectoInfo.setFechaFin(fechaFin);
+                    proyectoInfo.setPeriodo(periodo);
+                    proyectoInfo.setHorasTotales(horasTotales);
                     
                 }
             }
@@ -168,5 +188,32 @@ public class StudentConnection implements StudentDao{
         }
     }
     
+    
+    
+    public void consultaProfesor(String matricula){
+        Connection connect = Conexion.getConexion();
+    PreparedStatement stmt = null;
+    if(connect != null){
+        try{
+            stmt = connect.prepareStatement(SQL_PROFESOR);
+            stmt.setString(1, matricula);
+            ResultSet rs = stmt.executeQuery();
+                if(rs.next()){
+                    String nombre = rs.getString("nombre");
+                    String apellidoPaterno = rs.getString("apellidoPaterno");
+                    String apellidoMaterno = rs.getString("apellidoMaterno");
+                    
+                    ProfesorDTO profesorInfo = new ProfesorDTO();
+                    profesorInfo.setNombreProfesor(nombre);
+                    profesorInfo.setApellidoPaterno(apellidoPaterno);
+                    profesorInfo.setApellidoMaterno(apellidoMaterno);
+                    
+                }
+            }
+            catch(Exception e){
+                e.printStackTrace();
+            }
+        } 
+    }
     
 }

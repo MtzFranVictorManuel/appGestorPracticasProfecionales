@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appgestorpracticasprofecionales.FXMLExpedienteController">
+   <children>
+      <ImageView fitHeight="153.0" fitWidth="157.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="229.0" layoutY="39.0" text="Nombre:" />
+      <Label fx:id="txtNombreEstudiante" layoutX="285.0" layoutY="39.0" />
+      <Label layoutX="229.0" layoutY="74.0" text="Apellido Paterno:" />
+      <Label fx:id="txtApellidoPEstudiante" layoutX="328.0" layoutY="74.0" />
+      <Label layoutX="229.0" layoutY="107.0" text="Apellido Materno:" />
+      <Label fx:id="txtApellidoMEstudiante" layoutX="328.0" layoutY="107.0" />
+      <Label layoutX="229.0" layoutY="138.0" text="Correo:" />
+      <Label fx:id="txtCorreoEstudiante" layoutX="271.0" layoutY="138.0" />
+      <Label layoutX="229.0" layoutY="167.0" text="Matricula:" />
+      <Label fx:id="txtMatricula" layoutX="285.0" layoutY="167.0" />
+      <Label layoutX="229.0" layoutY="195.0" text="Telefono:" />
+      <Label fx:id="txtTelefono" layoutX="285.0" layoutY="195.0" />
+      <Label layoutX="29.0" layoutY="233.0" text="Información del expediente">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="29.0" layoutY="282.0" text="Fecha de inicio:" />
+      <Label fx:id="txtFechaInicio" layoutX="122.0" layoutY="282.0" />
+      <Label layoutX="29.0" layoutY="317.0" text="Fecha Fin:" />
+      <Label fx:id="txtFechaFin" layoutX="93.0" layoutY="317.0" />
+      <Label layoutX="29.0" layoutY="350.0" text="Periodo:" />
+      <Label fx:id="txtPeriodo" layoutX="93.0" layoutY="350.0" />
+      <Label layoutX="29.0" layoutY="383.0" text="Profesor:" />
+      <Label fx:id="txtProfesor" layoutX="93.0" layoutY="383.0" />
+      <Label layoutX="29.0" layoutY="418.0" text="Proyecto:" />
+      <Label fx:id="txtNombreProyecto" layoutX="93.0" layoutY="418.0" />
+      <Label layoutX="29.0" layoutY="454.0" text="Numero de horas:" />
+      <Label fx:id="txtHoras" layoutX="136.0" layoutY="454.0" />
+      <Button layoutX="613.0" layoutY="35.0" mnemonicParsing="false" onAction="#regresar" text="Regresar" />
+      <Button layoutX="613.0" layoutY="450.0" mnemonicParsing="false" text="Editar información" />
+   </children>
+</AnchorPane>

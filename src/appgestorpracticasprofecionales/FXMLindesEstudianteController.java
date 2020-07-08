@@ -41,7 +41,16 @@ public class FXMLindesEstudianteController implements Initializable {
     private void irGenerarReporte(ActionEvent event){
         irReporteIndex();
     }
-
+    
+    @FXML
+    private void irExpediente(ActionEvent event){
+        irExpedienteIndex();
+    }
+    
+    @FXML
+    private void cerrarSesion(ActionEvent event){
+        salir();
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -56,13 +65,39 @@ public class FXMLindesEstudianteController implements Initializable {
     try {
         Stage stage = (Stage) txtNombre.getScene().getWindow();
 
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("FXMLgenerarReporte.fxml")));
-        stage.setScene(scene);
+        Scene peregil = new Scene(FXMLLoader.load(getClass().getResource("FXMLgenerarReporte.fxml")));
+        stage.setScene(peregil);
         stage.show();
 
     }   catch (IOException ex) {
             Logger.getLogger(FXMLindexNewController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+   
+   private void irExpedienteIndex(){
+           try {
+        Stage stage = (Stage) txtNombre.getScene().getWindow();
+
+        Scene peregil = new Scene(FXMLLoader.load(getClass().getResource("FXMLExpediente.fxml")));
+        stage.setScene(peregil);
+        stage.show();
+
+    }   catch (IOException ex) {
+            Logger.getLogger(FXMLindexNewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+   
+      private void salir(){
+           try {
+        Stage stage = (Stage) txtNombre.getScene().getWindow();
+
+        Scene peregil = new Scene(FXMLLoader.load(getClass().getResource("FXMLindexNew.fxml")));
+        stage.setScene(peregil);
+        stage.show();
+
+    }   catch (IOException ex) {
+            Logger.getLogger(FXMLindexNewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
+    

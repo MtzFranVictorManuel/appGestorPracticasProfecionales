@@ -13,9 +13,9 @@
       <ImageView fitHeight="138.0" fitWidth="147.0" layoutX="14.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="180.0" layoutY="59.0" text="Matricula:" />
       <Button fx:id="btnSubirReporte" layoutX="36.0" layoutY="191.0" mnemonicParsing="false" onAction="#irGenerarReporte" text="Subir reporte" />
-      <Button layoutX="673.0" layoutY="55.0" mnemonicParsing="false" text="Mi expediente" />
+      <Button layoutX="673.0" layoutY="55.0" mnemonicParsing="false" onAction="#irExpediente" text="Mi expediente" />
       <Button layoutX="673.0" layoutY="112.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Proyectos" />
-      <Button layoutX="673.0" layoutY="362.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Cerrar sesion" />
+      <Button layoutX="673.0" layoutY="362.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="92.0" text="Cerrar sesion" />
       <TableView layoutX="22.0" layoutY="224.0" prefHeight="200.0" prefWidth="627.0">
         <columns>
           <TableColumn prefWidth="200.0" text="C1" />
@@ -23,7 +23,7 @@
             <TableColumn prefWidth="201.0" text="Column X" />
         </columns>
       </TableView>
-      <Label fx:id="txtNombre" layoutX="238.0" layoutY="31.0" />
+          <Label fx:id="txtNombre" layoutX="238.0" layoutY="31.0" />
       <Label fx:id="txtMatricula" layoutX="238.0" layoutY="59.0" />
    </children>
 </AnchorPane>

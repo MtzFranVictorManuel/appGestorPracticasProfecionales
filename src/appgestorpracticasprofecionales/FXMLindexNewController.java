@@ -47,7 +47,7 @@ public class FXMLindexNewController implements Initializable {
         
 
         if(!userName.isEmpty() && !password.isEmpty()){
-            if(userName.startsWith("xd"))
+            if(userName.startsWith("xd") || userName.startsWith("zS") || userName.startsWith("zs"))
             {
                 consultarEstudiante(userName, password);
                 
@@ -64,6 +64,11 @@ public class FXMLindexNewController implements Initializable {
         
         }
     }
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    } 
     
     private void consultarEstudiante(String matricula, String password){
         Connection connect = Conexion.getConexion();
@@ -147,8 +152,5 @@ public class FXMLindexNewController implements Initializable {
         }
     }
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }  
+ 
 }

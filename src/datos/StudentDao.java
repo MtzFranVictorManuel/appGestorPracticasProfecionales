@@ -19,4 +19,8 @@ public interface StudentDao {
     public int update(StudentDTO student) throws SQLException;
     
     public int delete(StudentDTO student) throws SQLException;
+    
+    public void consultarInfomacion(String matricula) throws SQLException;
+    
+    public void consultarEmpresa(String matricula) throws SQLException;
 }
