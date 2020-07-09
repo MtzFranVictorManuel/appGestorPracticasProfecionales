@@ -5,11 +5,15 @@
         <group>
             <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/datos/ReporteConecction.java</file>
             <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/profesor/FXMLIndexProfesor.fxml</file>
-            <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLindexNew.fxml</file>
+            <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLExpediente.fxml</file>
+            <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/datos/StudentConnection.java</file>
             <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLindesEstudianteController.java</file>
+            <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/domain/StudentDTO.java</file>
             <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/profesor/FXMLIndexProfesorController.java</file>
             <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLgenerarReporteController.java</file>
+            <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/domain/ReporteDTO.java</file>
             <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLindesEstudiante.fxml</file>
+            <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLExpedienteController.java</file>
             <file>file:/C:/Users/zS18019639/Documents/GitHub/appGestorPracticasProfecionales/src/appgestorpracticasprofecionales/FXMLindexNewController.java</file>
         </group>
     </open-files>
