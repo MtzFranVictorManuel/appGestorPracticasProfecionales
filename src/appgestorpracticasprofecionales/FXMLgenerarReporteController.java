@@ -23,6 +23,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import datos.ReporteConecction;
+import java.sql.SQLException;
+import javafx.scene.control.TextField;
 
 /**
  * FXML Controller class
@@ -40,10 +43,29 @@ public class FXMLgenerarReporteController implements Initializable {
     private Label txtNombreCompleto;
     @FXML
     private Label txtNombreProfesor;
+    @FXML
+    private TextField fieldNumeroHoras;
+    @FXML
+    private TextField fieldNRC;
+    @FXML
+    private TextField fieldFecha;
+    @FXML
+    private TextField fieldValorAvance;
     
     @FXML
     public void regresar(ActionEvent event){
         irEstudianteIndex();
+    }
+    
+    @FXML
+    public void guardarReporte(ActionEvent event) throws SQLException{
+        ReporteConecction guardarReporte = new ReporteConecction();
+        guardarReporte.updateReporte(fieldNRC.getText(), fieldNumeroHoras.getText(), fieldFecha.getText(), fieldValorAvance.getText());
+    }
+    
+    @FXML
+    public void exportar(ActionEvent event){
+        
     }
     
     @Override
@@ -63,8 +85,8 @@ public class FXMLgenerarReporteController implements Initializable {
     }    
     
     
-        private void irEstudianteIndex(){
-           try {
+    private void irEstudianteIndex(){
+    try {
         Stage stage = (Stage) txtNombreCompleto.getScene().getWindow();
 
         Scene peregil = new Scene(FXMLLoader.load(getClass().getResource("FXMLindesEstudiante.fxml")));

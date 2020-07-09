@@ -123,6 +123,7 @@ public class FXMLindexNewController implements Initializable {
                     alertExitoso.setHeaderText(null);
                     alertExitoso.setContentText("Bienvenido " + nomUser + " " + apellidoPaternoUser + " al sistema");
                     alertExitoso.showAndWait();
+                    irprincipalProfesor();
                 }
                 else{
                     Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -152,5 +153,17 @@ public class FXMLindexNewController implements Initializable {
         }
     }
     
+    private void irprincipalProfesor(){
+         try {
+            Stage stage = (Stage) textNameUser.getScene().getWindow();
+            
+            Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/appgestorpracticasprofecionales/profesor/FXMLIndexProfesor.fxml")));
+            stage.setScene(scene);
+            stage.show();
+                    
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLindexNewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
  
 }

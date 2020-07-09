@@ -7,19 +7,25 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="332.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appgestorpracticasprofecionales.FXMLindexNewController">
+<AnchorPane id="AnchorPane" prefHeight="385.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appgestorpracticasprofecionales.FXMLindexNewController">
    <children>
-      <Button fx:id="btnAccess" layoutX="303.0" layoutY="279.0" mnemonicParsing="false" onAction="#initializeLogin" text="Login" />
-      <TextField fx:id="textNameUser" layoutX="127.0" layoutY="132.0" />
-      <PasswordField fx:id="textPassword" layoutX="127.0" layoutY="202.0" />
-      <Label layoutX="14.0" layoutY="130.0" text="User name:">
+      <Button fx:id="btnAccess" layoutX="301.0" layoutY="277.0" mnemonicParsing="false" onAction="#initializeLogin" text="Inicio de secion" />
+      <TextField fx:id="textNameUser" layoutX="275.0" layoutY="160.0" promptText="Usuario" />
+      <PasswordField fx:id="textPassword" layoutX="275.0" layoutY="230.0" />
+      <Label layoutX="316.0" layoutY="123.0" text="Usuario">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="200.0" text="Password:">
+      <Label layoutX="300.0" layoutY="193.0" text="Contraseña">
          <font>
             <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="298.0" layoutY="322.0" mnemonicParsing="false" text="Solicitar registro" />
+      <Label layoutX="221.0" layoutY="57.0" text="INICIO DE SESIÓN">
+         <font>
+            <Font name="Calibri" size="39.0" />
          </font>
       </Label>
    </children>

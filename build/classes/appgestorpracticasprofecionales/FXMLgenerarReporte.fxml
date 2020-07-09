@@ -18,13 +18,13 @@
             <Font name="Arial" size="15.0" />
          </font></Label>
       <Label layoutX="28.0" layoutY="126.0" text="Numero de horas" />
-      <TextField layoutX="28.0" layoutY="156.0" promptText="numero de horas" />
+      <TextField fx:id="fieldNumeroHoras" layoutX="28.0" layoutY="156.0" promptText="numero de horas" />
       <Label layoutX="28.0" layoutY="200.0" text="NRC" />
-      <TextField layoutX="28.0" layoutY="228.0" promptText="NRC" />
+      <TextField fx:id="fieldNRC" layoutX="28.0" layoutY="228.0" promptText="NRC" />
       <Label layoutX="28.0" layoutY="270.0" text="Fecha" />
-      <TextField layoutX="28.0" layoutY="301.0" promptText="Fecha" />
+      <TextField fx:id="fieldFecha" layoutX="28.0" layoutY="301.0" promptText="Fecha" />
       <Label layoutX="30.0" layoutY="345.0" text="Valoracion de avance" />
-      <TextField layoutX="28.0" layoutY="383.0" promptText="Valoracion de avance" />
+      <TextField fx:id="fieldValorAvance" layoutX="28.0" layoutY="383.0" promptText="Valoracion de avance" />
       <Label layoutX="363.0" layoutY="126.0" text="Nombre Estudiante:">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -51,7 +51,7 @@
          </font></Label>
       <Label fx:id="txtNombreProfesor" layoutX="630.0" layoutY="160.0" textAlignment="CENTER" />
       <Button fx:id="btnRegresar" layoutX="630.0" layoutY="29.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="181.0" text="Regresar" />
-      <Button fx:id="btnExportar" layoutX="643.0" layoutY="396.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="181.0" text="Exportar" />
-      <Button fx:id="btnGuardar" layoutX="642.0" layoutY="434.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="181.0" text="Guardar" />
+      <Button fx:id="btnExportar" layoutX="643.0" layoutY="396.0" mnemonicParsing="false" onAction="#exportar" prefHeight="25.0" prefWidth="181.0" text="Exportar" />
+      <Button fx:id="btnGuardar" layoutX="642.0" layoutY="434.0" mnemonicParsing="false" onAction="#guardarReporte" prefHeight="25.0" prefWidth="181.0" text="Guardar" />
    </children>
 </AnchorPane>

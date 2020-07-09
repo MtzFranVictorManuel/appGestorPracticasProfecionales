@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="appgestorpracticasprofecionales.profesor.FXMLIndexProfesorController">
+   <children>
+      <Label fx:id="txtCoordinado" layoutX="32.0" layoutY="34.0" text="COORDINADOR">
+         <font>
+            <Font size="34.0" />
+         </font>
+      </Label>
+      <Button layoutX="128.0" layoutY="140.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="147.0" text="Estudiantes" />
+      <Button layoutX="322.0" layoutY="140.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="147.0" text="Proyectos" />
+      <Button layoutX="477.0" layoutY="46.0" mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+   </children>
+</AnchorPane>

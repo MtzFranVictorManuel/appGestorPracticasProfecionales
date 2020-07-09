@@ -16,11 +16,11 @@
       <Button layoutX="673.0" layoutY="55.0" mnemonicParsing="false" onAction="#irExpediente" text="Mi expediente" />
       <Button layoutX="673.0" layoutY="112.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="92.0" text="Proyectos" />
       <Button layoutX="673.0" layoutY="362.0" mnemonicParsing="false" onAction="#cerrarSesion" prefHeight="25.0" prefWidth="92.0" text="Cerrar sesion" />
-      <TableView layoutX="22.0" layoutY="224.0" prefHeight="200.0" prefWidth="627.0">
+      <TableView fx:id="tblReportes" layoutX="22.0" layoutY="224.0" prefHeight="200.0" prefWidth="627.0">
         <columns>
-          <TableColumn prefWidth="200.0" text="C1" />
-          <TableColumn prefWidth="225.0" text="C2" />
-            <TableColumn prefWidth="201.0" text="Column X" />
+          <TableColumn fx:id="colTipo" prefWidth="200.0" text="Tipo" />
+          <TableColumn fx:id="colEstado" prefWidth="225.0" text="Estado" />
+            <TableColumn fx:id="colFechaEntrega" prefWidth="201.0" text="Fecha final de entrega" />
         </columns>
       </TableView>
           <Label fx:id="txtNombre" layoutX="238.0" layoutY="31.0" />
