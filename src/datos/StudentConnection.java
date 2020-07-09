@@ -6,6 +6,9 @@
 package datos;
 
 import domain.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +27,8 @@ public class StudentConnection implements StudentDao{
     private static final String SQL_OPTENERINFOESTUDIANTE = "SELECT TBL_estudiante.nombre, TBL_estudiante.apellidoPaterno, TBL_estudiante.apellidoMaterno, TBL_estudiante.correo, TBL_estudiante.matricula, TBL_estudiante.semestre, TBL_estudiante.telefono, TBL_Carrera.carreraUniversitaria FROM TBL_estudiante, TBL_Carrera WHERE tbl_carrera.idtbl_carrera = (SELECT fk_id_carrera FROM tbl_estudiante WHERE matricula = ?) AND tbl_estudiante.matricula = ?";
     private static final String SQL_EMPRESAINFO = "SELECT *  FROM tbl_proyecto WHERE tbl_proyecto.id_proyecto = (SELECT FK_id_proyecto FROM STBL_FK_ProfesAlumnProyect WHERE FK_id_estudiante = (SELECT id_estudiante FROM TBL_Estudiante Where matricula = ?))";
     private static final String SQL_PROFESOR = "Select nombre, apellidoPaterno, apellidoMaterno from tbl_profesor where tbl_profesor.id_profesor = (select fk_id_profesor from stbl_fk_profesalumnproyect where fk_id_estudiante = (select id_estudiante from tbl_estudiante where matricula = ?))";
+    private static final String SQL_UPLOADIMAGE = "INSERT INTO tbl_documentos(information, fk_id_estudiante) values(?, ?)";
+    private static final String SQL_OBTENERIMAGEN = "SELECT information FROM tbl_documentos where id_documentos = 1";
 
     public StudentConnection(){
         
@@ -189,10 +194,9 @@ public class StudentConnection implements StudentDao{
     }
     
     
-    
     public void consultaProfesor(String matricula){
         Connection connect = Conexion.getConexion();
-    PreparedStatement stmt = null;
+        PreparedStatement stmt = null;
     if(connect != null){
         try{
             stmt = connect.prepareStatement(SQL_PROFESOR);
@@ -216,4 +220,43 @@ public class StudentConnection implements StudentDao{
         } 
     }
     
+    public int uploadImagen(String path){
+        File documento = new File(path);
+        Connection connect = Conexion.getConexion();
+        PreparedStatement stmt = null;
+        int rows = 0;
+        if(connect != null){
+            try{
+                stmt = connect.prepareStatement(SQL_UPLOADIMAGE);
+                FileInputStream imagen = new FileInputStream(documento);
+                stmt.setBinaryStream(1, imagen, (int)documento.length());
+                stmt.setInt(2, 1);
+                rows = stmt.executeUpdate();
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+        return rows;
+    }
+    
+    public void obtenerImagen(String nombreImagen){
+        Connection connect = Conexion.getConexion();
+        PreparedStatement stmt = null;
+        if(connect != null){
+            try{
+                stmt = connect.prepareStatement(SQL_OBTENERIMAGEN);
+                ResultSet rs = stmt.executeQuery();
+                if(rs.next()){
+                    String imagenUsuario = nombreImagen;
+                    FileOutputStream salidaImagen = new FileOutputStream(imagenUsuario);
+                    Blob blob = rs.getBlob("information");
+                    int length = (int) blob.length();
+                    byte[] bufer = blob.getBytes(1, length);
+                    salidaImagen.write(bufer, 0, length);
+                }
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }
+    }
 }

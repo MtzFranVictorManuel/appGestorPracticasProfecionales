@@ -20,6 +20,7 @@ public class StudentDTO {
     private static String telefono;
     private static String password;
     private static String carrera;
+    private static String nombreImagen;
 
     public StudentDTO(int id_estudiante, String nombre, String apellidoPaterno, String apellidoMaterno, String correo, String matricula, String semestre, String telefono, String password, String carrera) {
         this.id_estudiante = id_estudiante;
@@ -78,6 +79,10 @@ public class StudentDTO {
     public String getCarrera(){
         return carrera;
     }
+
+    public static String getNombreImagen() {
+        return nombreImagen;
+    }
     
     
     //sets
@@ -119,6 +124,10 @@ public class StudentDTO {
     
     public void setCarrera(String carrea){
         this.carrera = carrea;
+    }
+
+    public static void setNombreImagen(String nombreImagen) {
+        StudentDTO.nombreImagen = nombreImagen;
     }
     
 }

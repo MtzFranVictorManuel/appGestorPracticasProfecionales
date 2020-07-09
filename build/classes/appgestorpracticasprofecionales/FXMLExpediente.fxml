@@ -10,7 +10,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="540.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="appgestorpracticasprofecionales.FXMLExpedienteController">
    <children>
-      <ImageView fitHeight="153.0" fitWidth="157.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imagenPerfil" fitHeight="153.0" fitWidth="157.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="229.0" layoutY="39.0" text="Nombre:" />
       <Label fx:id="txtNombreEstudiante" layoutX="285.0" layoutY="39.0" />
       <Label layoutX="229.0" layoutY="74.0" text="Apellido Paterno:" />
@@ -41,6 +41,6 @@
       <Label layoutX="29.0" layoutY="454.0" text="Numero de horas:" />
       <Label fx:id="txtHoras" layoutX="136.0" layoutY="454.0" />
       <Button layoutX="613.0" layoutY="35.0" mnemonicParsing="false" onAction="#regresar" text="Regresar" />
-      <Button layoutX="613.0" layoutY="450.0" mnemonicParsing="false" text="Editar información" />
+      <Button layoutX="613.0" layoutY="450.0" mnemonicParsing="false" onAction="#editarInformacion" text="Editar información" />
    </children>
 </AnchorPane>
